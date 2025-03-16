@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\LoginController;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\HomeController;
 use App\Http\Controllers\ListBarangController;
@@ -30,4 +31,7 @@ Route::prefix('admin')->group(function () {
 // });
 Route::get('/listbarang/{id}/{name}', [ListBarangController::class, 'tampilkan']);
 
+
+
+Route::get('/login', [LoginController::class, 'login']);
 Route::get('/dashboard', [DashboardController::class, 'dashboard']);
