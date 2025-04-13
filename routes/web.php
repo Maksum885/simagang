@@ -4,6 +4,8 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\HomeController;
 use App\Http\Controllers\ListBarangController;
 use App\Http\Controllers\DashboardController;
+use App\Http\Controllers\LandingPageController;
+use App\Http\Controllers\LoginController;
 
 //Route::get('/', function () {
 //    return view('welcome');
@@ -25,9 +27,15 @@ Route::prefix('admin')->group(function () {
         return "Admin Users";
     });
 });
+Route::get('/', function () {
+    return view('welcome');
+});
+
 // Route::get('/listbarang/{id}/{nama}', function ($id, $nama) {
 //     return view('list_barang', compact('id', 'nama'));
 // });
-Route::get('/listbarang/{id}/{name}', [ListBarangController::class, 'tampilkan']);
+Route::get('/listbarang', [ListBarangController::class, 'tampilkan']);
 
 Route::get('/dashboard', [DashboardController::class, 'dashboard']);
+Route::get('/landingpage', [LandingPageController::class, 'landingpage']);
+Route::get('/login', [LoginController::class, 'login']);
