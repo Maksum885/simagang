@@ -6,6 +6,8 @@ use App\Http\Controllers\ListBarangController;
 use App\Http\Controllers\DashboardController;
 use App\Http\Controllers\LandingPageController;
 use App\Http\Controllers\LoginController;
+use App\Http\Controllers\ProductController;
+
 
 //Route::get('/', function () {
 //    return view('welcome');
@@ -36,6 +38,9 @@ Route::get('/', function () {
 // });
 Route::get('/listbarang', [ListBarangController::class, 'tampilkan']);
 
+
+
 Route::get('/dashboard', [DashboardController::class, 'dashboard']);
 Route::get('/landingpage', [LandingPageController::class, 'landingpage']);
 Route::get('/login', [LoginController::class, 'login']);
+Route::get('/list_product', [ProductController::class, 'products']);
