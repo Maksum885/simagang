@@ -1,46 +1,13 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
-use App\Http\Controllers\HomeController;
-use App\Http\Controllers\ListBarangController;
-use App\Http\Controllers\DashboardController;
-use App\Http\Controllers\LandingPageController;
-use App\Http\Controllers\LoginController;
-use App\Http\Controllers\ProductController;
+use App\Http\Controllers\AdminController;
 
+// Halaman dashboard admin
+Route::get('/admin/beranda', [AdminController::class, 'beranda'])->name('admin.beranda');
 
-//Route::get('/', function () {
-//    return view('welcome');
-//});
-
-Route::get('/', [HomeController::class, 'index']);
-Route::get('/contact', [HomeController::class, 'contact']);
-Route::get('/welcome', function () {
-    return 'Welcome to Laravel';
-});
-Route::get('/user/{id}', function ($id) {
-    return 'User ID: ' . $id;
-});
-Route::prefix('admin')->group(function () {
-    Route::get('/dashboard', function () {
-        return "Admin Dashboard";
-    });
-    Route::get('/users', function () {
-        return "Admin Users";
-    });
-});
-Route::get('/', function () {
-    return view('welcome');
-});
-
-// Route::get('/listbarang/{id}/{nama}', function ($id, $nama) {
-//     return view('list_barang', compact('id', 'nama'));
-// });
-Route::get('/listbarang', [ListBarangController::class, 'tampilkan']);
-
-
-
-Route::get('/dashboard', [DashboardController::class, 'dashboard']);
-Route::get('/landingpage', [LandingPageController::class, 'landingpage']);
-Route::get('/login', [LoginController::class, 'login']);
-Route::get('/list_product', [ProductController::class, 'products']);
+// Halaman kelola pengguna admin
+Route::get('/admin/kelola_pengguna', [AdminController::class, 'kelolaPengguna'])->name('admin.kelola_pengguna');
+Route::get('/admin/data_pp', [AdminController::class, 'dataPengguna1'])->name('admin.data_pp');
+Route::get('/admin/data_pk', [AdminController::class, 'dataPengguna2'])->name('admin.data_pk');
+Route::get('/admin/data_mhs', [AdminController::class, 'dataPengguna3'])->name('admin.data_mhs');
