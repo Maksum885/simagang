@@ -14,7 +14,7 @@
 
 <body class="bg-gray-100 dark:bg-gray-900">
     <div class="flex flex-1">
-        @include('components.sidebar.admin_sidebar')
+        @include('components.sidebars.admin_sidebar')
 
         <main class="flex-1 ml-60 p-30">
             @yield('content')
